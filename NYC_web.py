@@ -7,7 +7,7 @@ import datetime
 from NewYork_Location import *
 
 path="xgb78.pkl"
-model = pickle.load(open(path, 'rb'))
+model = pickle.load(open('xgb78.pkl', 'rb'))
 
 input_cols = ['passenger_count',
        'trip_distance', 'year', 'month', 'day', 'weekday',
