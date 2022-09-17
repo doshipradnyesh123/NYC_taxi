@@ -2,8 +2,7 @@ import pickle
 import numpy as np 
 import pandas as pd 
 import datetime
-from geopy.geocoders import Nominatim 
-geolocator = Nominatim(user_agent="NYC")
+
 # from NewYork_Location import Location_list,coordinate_list
 from NewYork_Location import *
 
