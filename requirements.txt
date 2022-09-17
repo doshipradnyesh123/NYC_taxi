@@ -1,4 +1,3 @@
 # requirements.txt
 mysql-connector-python==8.0.28
 streamlit-option-menu==0.3.2
-NYC_web.py
