@@ -1,4 +1,4 @@
 # requirements.txt
 mysql-connector-python==8.0.28
 streamlit-option-menu==0.3.2
-"doshipradnyesh123/NYC_taxi/blob/803d715a2a628ee903e76773066739c7c6da89f3/requirements.txt": [-e] "https://github.com/doshipradnyesh123/NYC_taxi/blob/803d715a2a628ee903e76773066739c7c6da89f3/NYC_web.py"
+
