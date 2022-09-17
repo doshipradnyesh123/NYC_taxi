@@ -322,7 +322,7 @@ def show_sign_up_page():
         email_id = st.text_input (label="Email : ", value="", placeholder="Enter your valid mail id")
         user_id = st.text_input (label="Username : ", value="", placeholder="Enter your user name")
         password = st.text_input (label="Password : ", value="",placeholder="Enter password", type="password")
-        conform_password = st.text_input (label="Conform Password : ", value="",placeholder="Re-enter password", type="password")
+        conform_password = st.text_input (label="Confirm Password : ", value="",placeholder="Re-enter password", type="password")
         
         if len(password)==0 :
             pass
