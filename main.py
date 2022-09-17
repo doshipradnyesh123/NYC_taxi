@@ -34,35 +34,35 @@ cust_mail_id=''
 #icon Link : https://icons.getbootstrap.com/
 
 #1 database connection         
-try:
-    mydb = mysql.connector.connect(
-    host=host_name,
-    database=database_name,
-    user=user_name,
-    password=database_password
-)
-except:
-    print("\tAlert: Database server connection failed !!")
-    raise SystemExit
+# try:
+#     mydb = mysql.connector.connect(
+#     host=host_name,
+#     database=database_name,
+#     user=user_name,
+#     password=database_password
+# )
+# except:
+#     print("\tAlert: Database server connection failed !!")
+#     raise SystemExit
 
-cursor = mydb.cursor()
+# cursor = mydb.cursor()
 
 
 def login(userName: str, password: str) -> bool:
     global cust_mail_id
-    if (userName is None):
-        return False
-    args = [userName, password]
-    sql="select email from user_detail where username=%s and u_password=%s"
-    result_args = cursor.execute(sql, args)
-    verification=cursor.fetchall()
-    print(verification)
-    if len(verification)==0:
-        return False
+#     if (userName is None):
+#         return False
+#     args = [userName, password]
+#     sql="select email from user_detail where username=%s and u_password=%s"
+#     result_args = cursor.execute(sql, args)
+#     verification=cursor.fetchall()
+#     print(verification)
+#     if len(verification)==0:
+#         return False
     
-    cust_mail_id=verification[0][0]
-    # set_cust_mail_id(cust_mail_id)
-    print("cust_mail_id ",cust_mail_id)
+#     cust_mail_id=verification[0][0]
+#     # set_cust_mail_id(cust_mail_id)
+#     print("cust_mail_id ",cust_mail_id)
     return True
 
 def objective_function():
