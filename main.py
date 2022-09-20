@@ -241,8 +241,8 @@ def show_login_page():
             st.title("NewYork Taxi Fare Application")
             if st.session_state['loggedIn'] == False:
                 global userName
-                userName = st.text_input (label="", value="", placeholder="Enter your user name")
-                password = st.text_input (label="", value="",placeholder="Enter password", type="password")
+                userName = st.text_input (label="UserName", value="", placeholder="Enter your user name")
+                password = st.text_input (label="Password", value="",placeholder="Enter password", type="password")
                 st.button ("Login", on_click=LoggedIn_Clicked, args= (userName, password))
 
     if select2=='Objective':
