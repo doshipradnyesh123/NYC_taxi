@@ -6,8 +6,8 @@ class Mail_alert:
 
     def __init__(self):
         # Define email sender and receiver
-            self.email_sender = st.secrets["GMAIL_ID"]
-            self.email_password = st.secrets["GAMIL_PASSWORD"]  # 'enter_encrpt_passwd'
+            self.email_sender =  st.secrets.gmail_credentials.gmail_id                              # st.secrets["GMAIL_ID"]
+            self.email_password =   st.secrets.gmail_credentials.password                          #st.secrets["GAMIL_PASSWORD"]  # 'enter_encrpt_passwd'
             self.cc_email=['pradnyeshdoshi01@gmail.com','amanpaliwal777@gmail.com']
         
     def send_mail(self,fare_price,email,pickup_point,dropoff_point,fare_time):
