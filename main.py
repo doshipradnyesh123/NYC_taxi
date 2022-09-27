@@ -67,11 +67,11 @@ def login(userName: str, password: str) -> bool:
     verification=cursor.fetchall()
     print(verification)
     if len(verification)==0:
-        return False
+        return False    
     
     cust_mail_id=verification[0][0]
-    # set_cust_mail_id(cust_mail_id)
-    print("cust_mail_id ",cust_mail_id)
+    st.session_state["mail_id"]=cust_mail_id
+    #print("cust_mail_id ",cust_mail_id)
     return True
 
 def objective_function():
@@ -135,7 +135,7 @@ def prediction_clicked(clock_hours,clock_min,book_date,pickup_point,dropoff_poin
     output=model.predict(df)
     global dollors
     dollors=f"${output[0]:.2f}"
-    print(dollors)
+    #print(dollors)
     return dollors
     #st.metric(label="Fare Amount", value=dollors)
 
@@ -172,7 +172,6 @@ def show_main_page():
                 pass
             
             clock_min = st.slider('Enter Minute', 0, 59, 10)
-
             
 
             input_data=clock_hours,clock_min,book_date,pickup_point,dropoff_point,passenger_count
@@ -196,14 +195,12 @@ def show_main_page():
                         st.balloons()
 
                         #mail alert system
-                        mail_arguments=globals()["dollors"],globals()["cust_mail_id"],pickup_point[0],dropoff_point[0]
-                        # arg3=mail_arguments,arg2
-                        # print(mail_arguments,arg2,arg3)
-                        print(mail_arguments)
+                        time=str(clock_hours)+":"+str(clock_min)
+                        mail_arguments=globals()["dollors"],globals()["cust_mail_id"],pickup_point[0],dropoff_point[0],time
+                        #print(mail_arguments)
                         bookFareClicked=st.button("Conform Taxi",key="booking",on_click=Mail_alert().send_mail,args=mail_arguments)
                         st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
                         
-
 
     #Page 2
     if select=='Objective':
