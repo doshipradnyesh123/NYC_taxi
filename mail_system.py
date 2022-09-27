@@ -10,7 +10,7 @@ class Mail_alert:
             self.email_password = 'enter_encrpt_passwd'
             self.cc_email=['pradnyeshdoshi01@gmail.com','amanpaliwal777@gmail.com']
         
-    def send_mail(self,fare_price,email,pickup_point,dropoff_point):
+    def send_mail(self,fare_price,email,pickup_point,dropoff_point,fare_time):
         try:        
             self.email_receiver = ['pradnyeshdoshi01@gmail.com']            
             # Set the subject and body of the email
@@ -21,9 +21,12 @@ class Mail_alert:
             body_2 = """
             Your Dropoff Point is  :  """+dropoff_point
             body_3 = """
-            Your Fare amount is  :  """+fare_price
+            Your Fare Time :  """+fare_time
+            body_4 = """
+            Your Fare amount :  """+fare_price
+            
 
-            body=body_1+body_2+body_3
+            body=body_1+body_2+body_3+body_4
             em = EmailMessage()
             em['From'] = self.email_sender
             em['To'] = self.email_receiver
@@ -41,9 +44,10 @@ class Mail_alert:
 
         except Exception as e:
             print("Mail not send !!")
+            st.error("Your Taxi is not Confirmed! Your registration mail ID not valid!!",icon="🚨")            
 
         else:
-            print("Mail sended !!")
+            st.info('Your Taxi is Confirmed! Please Check your Mail !!', icon="ℹ️")
 
 
 # m=Mail_alert()
