@@ -6,13 +6,13 @@ class Mail_alert:
 
     def __init__(self):
         # Define email sender and receiver
-            self.email_sender = 'doshipradnyesh123@gmail.com'
-            self.email_password = 'enter_encrpt_passwd'
+            self.email_sender = st.secrets["GMAIL_ID"]
+            self.email_password = st.secrets["GAMIL_PASSWORD"]  # 'enter_encrpt_passwd'
             self.cc_email=['pradnyeshdoshi01@gmail.com','amanpaliwal777@gmail.com']
         
     def send_mail(self,fare_price,email,pickup_point,dropoff_point,fare_time):
         try:        
-            self.email_receiver = ['pradnyeshdoshi01@gmail.com']            
+            self.email_receiver = [email]            
             # Set the subject and body of the email
             subject = 'Taxi Booking Conformation '
 
