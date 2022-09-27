@@ -33,6 +33,7 @@ database_password="root"
 cust_mail_id=''
 #icon Link : https://icons.getbootstrap.com/
 
+# Local MAchine : Database connection
 #1 database connection         
 # try:
 #     mydb = mysql.connector.connect(
@@ -47,6 +48,14 @@ cust_mail_id=''
 
 # cursor = mydb.cursor()
 
+#Cloud Database Connection
+@st.experimental_singleton
+def init_connection():
+    return mysql.connector.connect(**st.secrets["mysql"])
+
+mydb = init_connection()
+
+cursor = mydb.cursor()
 
 def login(userName: str, password: str) -> bool:
     global cust_mail_id
