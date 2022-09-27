@@ -190,7 +190,7 @@ def show_main_page():
 
                         #mail alert system
                         time=str(clock_hours)+":"+str(clock_min)
-                        mail_arguments=globals()["dollors"],globals()["cust_mail_id"],pickup_point[0],dropoff_point[0],time
+                        mail_arguments=globals()["dollors"],st.session_state["mail_id"],pickup_point[0],dropoff_point[0],time
                         #print(mail_arguments)
                         bookFareClicked=st.button("Conform Taxi",key="booking",on_click=Mail_alert().send_mail,args=mail_arguments)
                         st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
