@@ -1,8 +1,4 @@
 
-from ast import arguments
-from select import select
-from ssl import Options
-from typing import final
 import streamlit as st
 from streamlit_option_menu import option_menu
 import time
@@ -12,8 +8,6 @@ from NYC_web import *
 from NewYork_Location import *
 from PIL import Image
 dollors="Free"
-# from datetime import datetime
-# cust_mail_id=""
 
 import random
 from mail_system import Mail_alert,email_verfication
