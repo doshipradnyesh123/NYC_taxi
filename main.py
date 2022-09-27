@@ -176,9 +176,9 @@ def show_main_page():
             elif(len(dropoff_point)==0):
                 pass
             elif(len(pickup_point)>=2 or len(dropoff_point)>=2):
-                st.error("PLease Select Only One Pickup and Drop-off Location !!")
+                st.error("PLease Select Only One Pickup and Drop-off Location !!",icon="⚠️")
             elif dropoff_point==pickup_point:
-                st.error("PLease Enter Correct Pickup and Dropoff Location !!")
+                st.error("PLease Enter Correct Pickup and Dropoff Location !!",icon="⚠️")
             else:
                 col5,col6,col7=st.columns(3)
                 with col6:
@@ -226,7 +226,7 @@ def LoggedIn_Clicked(userName, password):
             #st.success('Done!')
     else:
         st.session_state['loggedIn'] = False
-        st.error("Invalid user name or password")
+        st.error("Invalid user name or password",icon="🚨")
 
 def show_login_page():
 
@@ -290,7 +290,7 @@ def user_registration(first_name,miiddle_name,last_name,birthdate,email_id,user_
     except Exception as e:
         st.error("Username already exit or Please enter correct information !!",icon="⚠️")
     else:
-        st.success("Thank you for Registration ! Welcome in New York !!")
+        st.success("Thank you for Registration ! Welcome in New York !!",icon="✅")
 
 
 
