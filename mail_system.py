@@ -47,7 +47,7 @@ class Mail_alert:
             st.error("Your Taxi is not Confirmed! Your registration mail ID not valid!!",icon="🚨")            
 
         else:
-            st.info('Your Taxi is Confirmed! Please Check your Mail !!', icon="ℹ️")
+            st.info('Please Check your Mail for Taxi Confirmation !!', icon="ℹ️")
 
 
 # m=Mail_alert()
