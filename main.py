@@ -288,7 +288,7 @@ def user_registration(first_name,miiddle_name,last_name,birthdate,email_id,user_
         cursor.execute(sql,arguments)
         mydb.commit()
     except Exception as e:
-        st.error("Username already exit or Please enter correct information !!")
+        st.error("Username already exit or Please enter correct information !!",icon="⚠️")
     else:
         st.success("Thank you for Registration ! Welcome in New York !!")
 
@@ -329,7 +329,7 @@ def show_sign_up_page():
         elif len(conform_password)==0:
             pass
         elif password!=conform_password:
-            st.error("PLease Enter correct password !!")
+            st.error("PLease Enter correct password !!",icon="🚨")
         
         aggrement = st.checkbox("Term and Condition apply !")
         if aggrement :            
