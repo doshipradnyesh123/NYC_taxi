@@ -182,17 +182,17 @@ def show_main_page():
             else:
                 col5,col6,col7=st.columns(3)
                 with col6:
-                    processingClicked = st.button("Predict", key="processing",on_click=prediction_clicked,args=input_data)
+                    processingClicked = st.button(" Predict ", key="processing",on_click=prediction_clicked,args=input_data)
                     st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
                     if processingClicked:
                         st.metric(label="Fare Amount", value=prediction_clicked(clock_hours,clock_min,book_date,pickup_point,dropoff_point,passenger_count))               
                         st.balloons()
 
                         #mail alert system
-                        time=str(clock_hours)+":"+str(clock_min)
+                        time=str(book_date)+" "+str(clock_hours)+":"+str(clock_min)
                         mail_arguments=globals()["dollors"],st.session_state["mail_id"],pickup_point[0],dropoff_point[0],time
                         #print(mail_arguments)
-                        bookFareClicked=st.button("Conform Taxi",key="booking",on_click=Mail_alert().send_mail,args=mail_arguments)
+                        bookFareClicked=st.button("Confirm Taxi",key="booking",on_click=Mail_alert().send_mail,args=mail_arguments)
                         st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
                         
 
