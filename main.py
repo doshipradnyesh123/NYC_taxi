@@ -294,19 +294,10 @@ def user_registration(first_name,miiddle_name,last_name,birthdate,email_id,user_
 
 
 
-
+# Registration Page
 def show_sign_up_page():
-    # with st.sidebar:
-    #     select3=option_menu( menu_title=None,
-    #         options=['Sign Up','Log in','Objective','About us'],
-    #         icons=['person-plus-fill','box-arrow-in-right','chat-left-quote-fill','file-earmark-code-fill']
-    #     )
-
-    # if select3=='Sign Up':
 
     with signUpSection:
-        # otp=''
-        # email_flag=0
         
         st.title("Registration")
         first_name = st.text_input("First Name : ",placeholder="Enter your name")
@@ -332,11 +323,12 @@ def show_sign_up_page():
             st.error("PLease Enter correct password !!",icon="🚨")
         
         aggrement = st.checkbox("Term and Condition apply !")
-        if aggrement :            
-           #first_name,middle_name,last_name,birth_date,email,username,u_password
-            argument=first_name,miiddle_name,last_name,birthdate,email_id,user_id,password
-            signInClicked=st.button(" Sign In ",key="registration",on_click=user_registration,args=argument)
-            st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
+        if first_name and email_id and user_id and password and conform_password:
+            if aggrement :            
+               #first_name,middle_name,last_name,birth_date,email,username,u_password
+                argument=first_name,miiddle_name,last_name,birthdate,email_id,user_id,password
+                signInClicked=st.button(" Sign In ",key="registration",on_click=user_registration,args=argument)
+                st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
         
                 
 
@@ -356,14 +348,11 @@ def show_sign_up_page():
             #             elif str(otp_check)!=otp :
             #                 print("Wrong OTP")
 
-with headerSection:
-    # st.title("NewYork Taxi Fare Application")    
+with headerSection:  
     #first run will have nothing in session_state
     with st.sidebar:
         #st.markdown("PROJECT")
-        st.title("NYC Taxi Fare Prediction and Analysis")  
-        # image = Image.open("F:\\CDAC\\Project\\Front_end\\profile.png")
-        # st.image(image, caption='Co-Founder')
+        st.title("NYC Taxi Fare Prediction and Analysis") 
         #st.subheader("MENU 🚕")        
         st.subheader("━━━━━━━━━━━━━━━━━")    
         st.markdown(information_1) 
