@@ -323,14 +323,14 @@ def show_sign_up_page():
             st.error("PLease Enter correct password !!",icon="🚨")
         
         aggrement = st.checkbox("Term and Condition apply !")
-        if first_name and email_id and user_id and password and conform_password:
-            if aggrement :            
-               #first_name,middle_name,last_name,birth_date,email,username,u_password
-                argument=first_name,miiddle_name,last_name,birthdate,email_id,user_id,password
-                signInClicked=st.button(" Sign In ",key="registration",on_click=user_registration,args=argument)
-                st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
         
-                
+        if aggrement :            
+           #first_name,middle_name,last_name,birth_date,email,username,u_password
+            argument=first_name,miiddle_name,last_name,birthdate,email_id,user_id,password
+            signInClicked=st.button(" Sign In ",key="registration",on_click=user_registration,args=argument)
+            st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(246, 51, 102);te } </style>""", unsafe_allow_html=True)
+
+
 
             #    otp_verification(otp)
             #     #otp_cheking()
