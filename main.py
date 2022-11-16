@@ -54,14 +54,14 @@ cursor = mydb.cursor()
 def login(userName: str, password: str) -> bool:
     global cust_mail_id
     if (userName is None):
-        return False
+        return True # require return False
     args = [userName, password]
     sql="select email from user_detail where username=%s and u_password=%s"
     result_args = cursor.execute(sql, args)
     verification=cursor.fetchall()
     print(verification)
     if len(verification)==0:
-        return False    
+        return True # require return False   
     
     cust_mail_id=verification[0][0]
     st.session_state["mail_id"]=cust_mail_id
